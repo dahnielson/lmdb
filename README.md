@@ -1,7 +1,10 @@
-# Lightning Memory-Mapped Database Manager (LMDB)
-[lmdb](http://www.lmdb.tech/doc/index.html) bindings for [odin](https://odin-lang.org/)
+# LMDB bindings
 
-# Basic Example
+[LMDB](http://www.lmdb.tech/doc/index.html) bindings for [Odin](https://odin-lang.org/) 
+forked from [Skytrias/lmdb](https://github.com/Skytrias/lmdb).
+
+## Basic example
+
 ```odin
 package main
 
@@ -34,11 +37,11 @@ main :: proc() {
 
     // // write some values (for testing only once to see persistent read)
     // fmt.eprintln("PUT")
-    // key = mdb.val_str("testing")
-    // data = mdb.val_str("Hello World")
+    // key = mdb.val_str_make("testing")
+    // data = mdb.val_str_make("Hello World")
     // check(mdb.put(txn, dbi, &key, &data))
-    // key = mdb.val_str("another")
-    // data = mdb.val_str("one")
+    // key = mdb.val_str_make("another")
+    // data = mdb.val_str_make("one")
     // check(mdb.put(txn, dbi, &key, &data))
 
     check(mdb.txn_commit(txn))
@@ -58,6 +61,3 @@ main :: proc() {
     mdb.env_close(env)
 }
 ```
-
-# License
-Not sure wether the License needs to be the same as the [original](https://www.openldap.org/software/release/license.html) as it's just bindings (with docs copied). Let me know if it has to match. 
